@@ -6,6 +6,7 @@
 #define ff first
 #define vi vector<int>
 #define vll vector<ll>
+#define pb push_back
 #define ss second
 #define all(x) x.begin(),x.end()
 #define maxiheap priority_queue<int>
