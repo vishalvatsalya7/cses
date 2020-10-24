@@ -1,3 +1,4 @@
+// This code is to compute distance between two nodes of a tree efficiently
 #include <bits/stdc++.h>
  
 using namespace std;
@@ -7,16 +8,16 @@ vector<int> nodes, depth, index1;
 const int mod = 1e9+7;
 vector<int> adj[200007];
 int n,u,q,u1,cnt;
-void dfs(int u, int p, int d){
+void dfs(int u, int p, int dist){
     nodes[cnt] = u;
-    depth[cnt] = d;
+    depth[cnt] = dist;
     index1[u] = cnt;
     cnt++;
     for(auto v:adj[u]){
         if(v==p) continue;
-        dfs(v,u,d+1);
+        dfs(v,u,dist+1);
         nodes[cnt] = u;
-        depth[cnt] = d;
+        depth[cnt] = dist;
         index1[u] = cnt;
         cnt++;
     }
