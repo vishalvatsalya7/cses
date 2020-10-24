@@ -1,3 +1,4 @@
+// This is to compute diameter of a bindary tree using Depth First Search
 #include <bits/stdc++.h>
  
 using namespace std;
@@ -6,15 +7,15 @@ using namespace std;
 const int mod = 1e9+7;
 vector<int> adj[200007];
 int id, mx;
-void dfs(int u, int p, int dist){
-    if(mx<dist){
+void dfs(int u, int p, int distance){
+    if(mx<distance){
         id = u;
-        mx = dist;
+        mx = distance;
         //cout << id << " " << mx << endl;
     }
     for(auto v:adj[u]){
         if(v==p) continue;
-        dfs(v, u, dist+1);
+        dfs(v, u, distance+1);
     }
 }
 int main()
